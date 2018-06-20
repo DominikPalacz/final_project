@@ -1,4 +1,4 @@
 node_modules
 .idea/
-package-lock.yml
-_config.xml
+package-lock.json
+_config.yml
