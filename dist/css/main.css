@@ -1,0 +1,115 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Bungee Inline', cursive;
+  font-size: 1.05em;
+  color: #111111; }
+
+body {
+  background-image: url(images/low_contrast_linen.png); }
+  body ol, body ul {
+    list-style: none; }
+
+button {
+  background-color: rgba(255, 217, 0, 0.3);
+  transition: 2s; }
+  button:hover {
+    background-color: #ffd900;
+    cursor: pointer;
+    transform: scale(1.1) skew(-1deg, -1deg); }
+
+@keyframes pulse {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0.10; } }
+
+@keyframes fly {
+  0% {
+    top: 0vh;
+    left: 0vw; }
+  25% {
+    top: 14vh;
+    left: 0vw; }
+  50% {
+    top: 14vh;
+    left: -45vw; }
+  75% {
+    top: 14vh;
+    left: 45vw; }
+  100% {
+    top: 51vh;
+    left: 0vw; } }
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg) scale(0.1); }
+  25% {
+    transform: rotate(5deg) scale(0.2); }
+  50% {
+    transform: rotate(10deg) scale(0.2); }
+  75% {
+    transform: rotate(15deg) scale(0.2); }
+  100% {
+    transform: rotate(360deg) scale(0.4); } }
+
+.HolyGrail,
+.HolyGrail-body {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(255, 217, 0, 0.3);
+  text-align: center;
+  height: 90vh; }
+  .HolyGrail .HolyGrail-content,
+  .HolyGrail-body .HolyGrail-content {
+    border: 1px solid black; }
+    .HolyGrail .HolyGrail-content img,
+    .HolyGrail-body .HolyGrail-content img {
+      width: 40%;
+      height: 40%;
+      transition: 5s; }
+      .HolyGrail .HolyGrail-content img:hover,
+      .HolyGrail-body .HolyGrail-content img:hover {
+        transform: scale(1.1) rotate(360deg);
+        animation-name: pulse;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate; }
+    .HolyGrail .HolyGrail-content p,
+    .HolyGrail-body .HolyGrail-content p {
+      background-color: rgba(255, 217, 0, 0.3); }
+  .HolyGrail .HolyGrail-header,
+  .HolyGrail-body .HolyGrail-header {
+    height: 20vh; }
+    .HolyGrail .HolyGrail-header img,
+    .HolyGrail-body .HolyGrail-header img {
+      position: relative;
+      z-index: 1;
+      animation: fly 15s, rotate 15s; }
+  .HolyGrail .HolyGrail-L,
+  .HolyGrail-body .HolyGrail-L {
+    order: -1; }
+    .HolyGrail .HolyGrail-L p,
+    .HolyGrail-body .HolyGrail-L p {
+      background-color: rgba(255, 217, 0, 0.35); }
+  .HolyGrail .HolyGrail-R,
+  .HolyGrail-body .HolyGrail-R {
+    order: 1; }
+    .HolyGrail .HolyGrail-R p,
+    .HolyGrail-body .HolyGrail-R p {
+      background-color: rgba(255, 217, 0, 0.35); }
+  .HolyGrail .HolyGrail-footer,
+  .HolyGrail-body .HolyGrail-footer {
+    height: 10vh; }
+
+@media (min-width: 768px) {
+  .HolyGrail-body {
+    flex-direction: row;
+    flex: 1; }
+  .HolyGrail-content {
+    flex: 1; }
+  .HolyGrail-L, .HolyGrail-R {
+    /* 12em is the width of the columns */
+    flex: 0 0 12em; } }
+
