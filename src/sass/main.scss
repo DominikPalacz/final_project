@@ -97,7 +97,7 @@ button {
     left: 40vw;
   }
   100% {
-    top: 0vh;
+    top: 10vh;
     left: 50vw;
   }
 }
@@ -116,7 +116,7 @@ button {
     transform: rotate(15deg) scale(0.20);
   }
   100% {
-    transform: rotate(360deg) scale(0.8);
+    transform: rotate(360deg) scale(0.5);
   }
 }
 
