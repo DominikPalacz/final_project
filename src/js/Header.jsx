@@ -6,8 +6,8 @@ class Header extends React.Component {
     render() {
         return (
             <header className="HolyGrail-header">
-                <h1>Najlpeszy symulator girłdy BITCOIN</h1>
-                <img src="../../imgages/btc.png" alt=""/>
+                <h1>Najlpeszy symulator giełdy BITCOIN</h1>
+                <img src="../../images/btc.png" alt="btc2"/>
             </header>
         )
     }

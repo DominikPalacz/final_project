@@ -88,7 +88,8 @@ class WebsiteTemplate extends React.Component {
                         <button onClick={e => this.handleClickPaycheck(e)}>Wypłać PLN</button>
                         <div>Wypłacono:</div>
                         <p>{this.state.take}</p>
-                        <img src="https://cryptocurrencynews.com/wp-content/uploads/sites/3/2018/03/Bitcoin-Price-Watch-BTC-USD-Breaks-Above-8000-Once-Again-678x381.jpg"
+                        <img
+                            src="https://cryptocurrencynews.com/wp-content/uploads/sites/3/2018/03/Bitcoin-Price-Watch-BTC-USD-Breaks-Above-8000-Once-Again-678x381.jpg"
                             alt="BTC"/>
                     </main>
 

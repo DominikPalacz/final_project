@@ -93,12 +93,12 @@ button {
     left: 30vw;
   }
   90% {
-    top: -20vh;
+    top: 20vh;
     left: 40vw;
   }
   100% {
-    top: 10vh;
-    left: 50vw;
+    top: -40vh;
+    left: 45vw;
   }
 }
 
@@ -147,7 +147,6 @@ $backgroundGold: hsla(51, 100%, 50%, 0.30);
   .HolyGrail-content {
     //border: 1px solid #fff;
 
-
     img {
       width: 40%;
       height: 40%;
@@ -161,7 +160,7 @@ $backgroundGold: hsla(51, 100%, 50%, 0.30);
         animation-direction: alternate;
       }
     }
-    h1{
+    h1 {
       color: #666;
       font-size: 2em;
     }
