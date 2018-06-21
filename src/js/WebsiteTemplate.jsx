@@ -1,6 +1,9 @@
 import React from "react";
 import Header from './Header.jsx';
-import Footer from './Footer.jsx'
+import Footer from './Footer.jsx';
+import AsideLeft from './leftBuyPln.jsx';
+import AsideRight from './rightSellBtc.jsx';
+import CenterMain from './centerMain.jsx';
 
 class WebsiteTemplate extends React.Component {
 
@@ -27,7 +30,8 @@ class WebsiteTemplate extends React.Component {
         }, 1000)
     }
 
-    handleClickPayment() {
+    // ES7 ;)
+    handleClickPayment = () => {
         let value = prompt("Podaj kwotę");
         this.setState({
                 plnValueLeft: value,
@@ -35,22 +39,23 @@ class WebsiteTemplate extends React.Component {
             }
         )
     }
-
-    handleClickBuy() {
+    //przekazanie this do komponentu dziecka bo tam ma inny kontekst
+    handleClickBuy = () => {
         this.setState({
             btcValueRight: this.state.plnValueLeft / this.state.currentCourseCenter,
             plnValueLeft: 0,
         })
     }
 
-    handleClickSell() {
+
+    handleClickSell = () => {
         this.setState({
             plnValueLeft: Math.floor(this.state.btcValueRight * this.state.currentCourseCenter),
             btcValueRight: 0,
         })
     }
 
-    handleClickPaycheck() {
+    handleClickPaycheck = () => {
         let takeValue = prompt("Ile chcesz kasy ?");
         this.setState({
             take: takeValue,
@@ -63,47 +68,19 @@ class WebsiteTemplate extends React.Component {
         return (
             <section className="HolyGrail">
 
-                <Header/>
+                <Header title='Najlpeszy symulator giełdy BITCOIN'/>
 
                 <div className="HolyGrail-body">
 
-                    <aside className="HolyGrail-L">
-                        <ul>
-                            <li>Stan konta PLN</li>
-                            <p>{this.state.plnValueLeft + " PLN"}</p>
-                            <button onClick={e => this.handleClickBuy(e)}>Kup BTC</button>
-                        </ul>
-                    </aside>
+                    <AsideLeft value={this.state.plnValueLeft} actionClick={this.handleClickBuy} props={this.state}/>
 
-                    <main className="HolyGrail-content">
-                        <div>
-                            <p>Aktualny kurs BTC</p>
-                            <h1>{this.state.currentCourseCenter}</h1>
-                        </div>
-                        <div>
-                            <button onClick={e => this.handleClickPayment(e)}>Dokonaj wpłaty PLN</button>
-                        </div>
-                        <div>Historia wpłat:</div>
-                        <p>{this.state.addDepositHistory}</p>
-                        <button onClick={e => this.handleClickPaycheck(e)}>Wypłać PLN</button>
-                        <div>Wypłacono:</div>
-                        <p>{this.state.take}</p>
-                        <img
-                            src="https://cryptocurrencynews.com/wp-content/uploads/sites/3/2018/03/Bitcoin-Price-Watch-BTC-USD-Breaks-Above-8000-Once-Again-678x381.jpg"
-                            alt="BTC"/>
-                    </main>
+                    <CenterMain courseApi={this.state.currentCourseCenter} actionClickC={this.handleClickPayment} addHistory={this.state.addDepositHistory} actionClickP={this.handleClickPaycheck} stateTake={this.state.take}/>
 
-                    <aside className="HolyGrail-R">
-                        <ul>
-                            <li>Stan konta BTC</li>
-                            <p>{this.state.btcValueRight + " BTC"}</p>
-                            <button onClick={e => this.handleClickSell(e)}>Sprzedaj BTC</button>
-                        </ul>
-                    </aside>
+                    <AsideRight valueBtc={this.state.btcValueRight} propsMethod={this.handleClickSell}/>
 
                 </div>
 
-                <Footer/>
+                <Footer textFooter="&copy; 2018 by Dominik Palacz"/>
 
             </section>
         )
@@ -111,5 +88,3 @@ class WebsiteTemplate extends React.Component {
 }
 
 module.exports = WebsiteTemplate;
-
-//TODO Add Modal Dialogs in React

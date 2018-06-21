@@ -6,31 +6,49 @@ class App extends React.Component {
 
     render() {
         return (
-            <WebsiteTemplate/>
+            <WebsiteTemplate />
         )
     }
 }
 
 module.exports = App;
 
-// header={
-//     <h1>by Dominik Palacz</h1>
+
+//TODO historia transakcji
+
+//TODO Add Modal Dialogs in React
+// //
+// class ExampleApp extends React.Component {
+//     constructor() {
+//         super();
+//         this.state = {
+//             showModal: false
+//         };
+//
+//         this.handleOpenModal = this.handleOpenModal.bind(this);
+//         this.handleCloseModal = this.handleCloseModal.bind(this);
+//     }
+//
+//     handleOpenModal() {
+//         this.setState({showModal: true});
+//     }
+//
+//     handleCloseModal() {
+//         this.setState({showModal: false});
+//     }
+//
+//     render() {
+//         return (
+//             <div>
+//                 <button onClick={this.handleOpenModal}>Trigger Modal</button>
+//                 <ReactModal
+//                     isOpen={this.state.showModal}
+//                     contentLabel="Minimal Modal Example"
+//                 >
+//                     <button onClick={this.handleCloseModal}>Close Modal</button>
+//                 </ReactModal>
+//             </div>
+//         );
+//     }
 // }
-// content={
-//     <div>
-//         <p>Handluj na wirtualnej giełdzie BITCOINEM i zarabiaj na kolejne kursy w CodersLab</p>
-//     </div>
-// }
-// menu={
-//     <ul>
-//         <li>LISTA LEWA</li>
-//     </ul>
-// }
-// ad={
-//     <ul>
-//         <li>LISTA PRAWA</li>
-//     </ul>
-// }
-// footer={
-//     <p>&copy; 2018 Dominik Palacz</p>
-// }
+
