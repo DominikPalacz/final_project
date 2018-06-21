@@ -222,19 +222,19 @@ $backgroundGold: hsla(51, 100%, 50%, 0.30);
   .HolyGrail-content {
     //border: 1px solid #fff;
 
-    //img {
-    //  width: 40%;
-    //  height: 40%;
-    //  transition: 5s;
-    //  opacity: 0.05;
-    //  &:hover {
-    //    transform: scale(0.8) rotate(5deg);
-    //    animation-name: pulse;
-    //    animation-duration: 0.5s;
-    //    animation-iteration-count: infinite;
-    //    animation-direction: alternate;
-    //  }
-    //}
+    img {
+      width: 40%;
+      height: 40%;
+      transition: 5s;
+      opacity: 0.05;
+      &:hover {
+        transform: scale(0.8) rotate(5deg);
+        animation-name: pulse;
+        animation-duration: 0.5s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+      }
+    }
     h1 {
       color: #666;
       font-size: 2em;

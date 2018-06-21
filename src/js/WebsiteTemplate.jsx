@@ -50,7 +50,7 @@ class WebsiteTemplate extends React.Component {
             .then(r => r.json())
             .then(data => {
                 let counter = 0;
-                let time = 90;
+                let time = 89;
                 this.intervalId =  setInterval(() => {
                     this.setState({
                         currentCourseCenter:  Math.floor(data[counter].open),
@@ -59,6 +59,8 @@ class WebsiteTemplate extends React.Component {
                     });
                     counter++;
                     time--;
+
+                    if(this.state.timeGame == 0){clearInterval(this.intervalId);}
 
                 }, 1000);
 
@@ -78,14 +80,14 @@ class WebsiteTemplate extends React.Component {
                 addDepositHistory: value
             }
         )
-    }
+    };
     //przekazanie this do komponentu dziecka bo tam ma inny kontekst
     handleClickBuy = () => {
         this.setState({
             btcValueRight: this.state.plnValueLeft / this.state.currentCourseCenter,
             plnValueLeft: 0,
         })
-    }
+    };
 
 
     handleClickSell = () => {
@@ -93,7 +95,7 @@ class WebsiteTemplate extends React.Component {
             plnValueLeft: Math.floor(this.state.btcValueRight * this.state.currentCourseCenter),
             btcValueRight: 0,
         })
-    }
+    };
 
     handleClickPaycheck = () => {
         let takeValue = prompt("Ile chcesz kasy ?");
@@ -102,7 +104,7 @@ class WebsiteTemplate extends React.Component {
             plnValueLeft: Number(this.state.plnValueLeft) - Number(takeValue),
         })
 
-    }
+    };
 
     render() {
         return (
@@ -126,6 +128,7 @@ class WebsiteTemplate extends React.Component {
 
                 <Footer textFooter="&copy; 2018 by Dominik Palacz" />
 
+                <p>Pieniądz jest czasem... czasem jest ;) a czasem go niema!</p>
             </section>
         )
     }

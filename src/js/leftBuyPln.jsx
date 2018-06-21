@@ -10,15 +10,27 @@ class AsideLeft extends React.Component {
     };
 
     render(){
-        return(
-            <aside className="HolyGrail-L">
-                <ul>
-                    <li>Stan konta PLN</li>
-                    <p>{this.props.value + " PLN"}</p>
-                    <button onClick={this.handleClick}>Kup BTC</button>
-                </ul>
-            </aside>
-        )
+        if (this.props.value !== 0){
+            return(
+                <aside className="HolyGrail-L">
+                    <ul>
+                        <li>Stan konta PLN</li>
+                        <p>{this.props.value + " PLN"}</p>
+                        <button onClick={this.handleClick}>Kup BTC</button>
+                    </ul>
+                </aside>
+            )
+        } else {
+            return(
+                <aside className="HolyGrail-L">
+                    <ul>
+                        <li>Stan konta PLN</li>
+                        <p>{this.props.value + " PLN"}</p>
+                    </ul>
+                </aside>
+            )
+        }
+
     }
 }
 

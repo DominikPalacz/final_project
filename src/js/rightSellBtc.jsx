@@ -9,15 +9,27 @@ class AsideRight extends React.Component {
 
 
     render() {
-        return (
-            <aside className="HolyGrail-R">
-                <ul>
-                    <li>Stan konta BTC</li>
-                    <p>{this.props.valueBtc + " BTC"}</p>
-                    <button onClick={e => this.handleCSell(e)}>Sprzedaj BTC</button>
-                </ul>
-            </aside>
-        )
+        if(this.props.valueBtc){
+            return (
+                <aside className="HolyGrail-R">
+                    <ul>
+                        <li>Stan konta BTC</li>
+                        <p>{this.props.valueBtc + " BTC"}</p>
+                        <button onClick={e => this.handleCSell(e)}>Sprzedaj BTC</button>
+                    </ul>
+                </aside>
+            )
+        } else {
+            return (
+                <aside className="HolyGrail-R">
+                    <ul>
+                        <li>Stan konta BTC</li>
+                        <p>{this.props.valueBtc + " BTC"}</p>
+                    </ul>
+                </aside>
+            )
+        }
+
     }
 
 }

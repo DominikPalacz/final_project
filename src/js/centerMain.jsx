@@ -15,27 +15,49 @@ class CenterMain extends React.Component {
     }
 
     render() {
-        return (
-            <main className="HolyGrail-content">
-                <div>
-                    <p>Aktualny kurs BTC</p>
-                    <h1>{this.props.courseApi}</h1>
-                    <h2>{this.props.courseApiHistory}</h2>
-                    <h3>{this.props.timeProps}</h3>
-                </div>
-                <div>
-                    <button onClick={this.handleClickCenter}>Dokonaj wpłaty PLN</button>
-                </div>
-                <div>Historia wpłat:</div>
-                <p>{this.props.addHistory}</p>
-                <button onClick={e => this.handleClickPay(e)}>Wypłać PLN</button>
-                <div>Wypłacono:</div>
-                <p>{this.props.stateTake}</p>
-                {/*<img*/}
-                {/*src="https://cryptocurrencynews.com/wp-content/uploads/sites/3/2018/03/Bitcoin-Price-Watch-BTC-USD-Breaks-Above-8000-Once-Again-678x381.jpg"*/}
-                {/*alt="BTC"/>*/}
-            </main>
-        )
+
+        if(this.props.timeProps >= 1){
+            return (
+                <main className="HolyGrail-content">
+                    <div>
+                        <h3>Czas to pieniądz! Pozostało {this.props.timeProps} sek</h3>
+                        <p>Aktualny kurs BTC</p>
+                        <h1>{this.props.courseApi}</h1>
+                        <h2>{this.props.courseApiHistory}</h2>
+                    </div>
+                    <div>
+                        <button onClick={this.handleClickCenter}>Dokonaj wpłaty PLN</button>
+                    </div>
+                    <div>Historia wpłat:</div>
+                    <p>{this.props.addHistory}</p>
+                    <button onClick={e => this.handleClickPay(e)}>Wypłać PLN</button>
+                    <div>Wypłacono:</div>
+                    <p>{this.props.stateTake}</p>
+                    {/*<img*/}
+                    {/*src="https://cryptocurrencynews.com/wp-content/uploads/sites/3/2018/03/Bitcoin-Price-Watch-BTC-USD-Breaks-Above-8000-Once-Again-678x381.jpg"*/}
+                    {/*alt="BTC"/>*/}
+                </main>
+            )
+        } else {
+            return (
+                <main className="HolyGrail-content">
+                    <div>
+                        <h3>Koniec</h3>
+                        <p>Aktualny kurs BTC</p>
+                    </div>
+                    <div>Wpłacono:</div>
+                    <p>{this.props.addHistory}</p>
+                    <button onClick={e => this.handleClickPay(e)}>Wypłać PLN</button>
+                    <div>Wypłacono:</div>
+                    <p>{this.props.stateTake}</p>
+                    <img
+                    src="https://cryptocurrencynews.com/wp-content/uploads/sites/3/2018/03/Bitcoin-Price-Watch-BTC-USD-Breaks-Above-8000-Once-Again-678x381.jpg"
+                    alt="BTC"/>
+                </main>
+            )
+        }
+
+
     }
 
 }
