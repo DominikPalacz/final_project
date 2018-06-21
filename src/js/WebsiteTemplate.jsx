@@ -50,7 +50,7 @@ class WebsiteTemplate extends React.Component {
             .then(r => r.json())
             .then(data => {
                 let counter = 0;
-                let time = 90;
+                let time = 89;
                 this.intervalId =  setInterval(() => {
                     this.setState({
                         currentCourseCenter:  Math.floor(data[counter].open),

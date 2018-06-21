@@ -17,11 +17,11 @@ class CenterMain extends React.Component {
     render() {
         return (
             <main className="HolyGrail-content">
+                <h3>Pozostało Ci {this.props.timeProps} sek.</h3>
                 <div>
                     <p>Aktualny kurs BTC</p>
                     <h1>{this.props.courseApi}</h1>
                     <h2>{this.props.courseApiHistory}</h2>
-                    <h3>{this.props.timeProps}</h3>
                 </div>
                 <div>
                     <button onClick={this.handleClickCenter}>Dokonaj wpłaty PLN</button>
