@@ -38,16 +38,64 @@ button {
 @keyframes fly {
 
   0% {
-    top: 70vh;
+    top: 65vh;
     left: -50vw;
+  }
+  1% {
+    top: 73vh;
+    left: -49vw;
+  }
+  2% {
+    top: 70vh;
+    left: -48vw;
+  }
+  3% {
+    top: 68vh;
+    left: -47vw;
+  }
+  4% {
+    top: 70vh;
+    left: -46vw;
   }
   5% {
     top: 65vh;
     left: -45vw;
   }
+  6% {
+    top: 60vh;
+    left: -44vw;
+  }
+  7% {
+    top: 50vh;
+    left: -43vw;
+  }
+  8% {
+    top: 51vh;
+    left: -42vw;
+  }
+  9% {
+    top: 60vh;
+    left: -41vw;
+  }
   10% {
     top: 55vh;
     left: -40vw;
+  }
+  11% {
+    top: 60vh;
+    left: -39vw;
+  }
+  12% {
+    top: 58vh;
+    left: -38vw;
+  }
+  13% {
+    top: 61vh;
+    left: -37vw;
+  }
+  14% {
+    top: 65vh;
+    left: -36vw;
   }
   15% {
     top: 65vh;
@@ -101,9 +149,41 @@ button {
     top: 0vh;
     left: 25vw;
   }
+  76% {
+    top: 5vh;
+    left: 26vw;
+  }
+  77% {
+    top: 2vh;
+    left: 27vw;
+  }
+  78% {
+    top: 8vh;
+    left: 28vw;
+  }
+  79% {
+    top: 5vh;
+    left: 29vw;
+  }
   80% {
     top: -10vh;
     left: 30vw;
+  }
+  81% {
+    top: -15vh;
+    left: 31vw;
+  }
+  82% {
+    top: 5vh;
+    left: 32vw;
+  }
+  83% {
+    top: 0vh;
+    left: 33vw;
+  }
+  84% {
+    top: 5vh;
+    left: 34vw;
   }
   85% {
     top: 0vh;
@@ -251,7 +331,7 @@ $backgroundGold: hsla(51, 100%, 50%, 0.30);
     img {
       position: relative;
       z-index: 1;
-      animation: fly 15s, rotate 15s;
+      animation: fly 90s, rotate 40s;
       animation-iteration-count: infinite;
     }
   }

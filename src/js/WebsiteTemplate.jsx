@@ -128,7 +128,6 @@ class WebsiteTemplate extends React.Component {
 
                 <Footer textFooter="&copy; 2018 by Dominik Palacz" />
 
-                <p>Pieniądz jest czasem... czasem jest ;) a czasem go niema!</p>
             </section>
         )
     }
