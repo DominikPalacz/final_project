@@ -109,8 +109,6 @@ class WebsiteTemplateLtc extends React.Component {
 
                 </div>
 
-                <Footer textFooter="&copy; 2018 by Dominik Palacz"/>
-
             </section>
         )
     }
