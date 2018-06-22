@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import {Router, Link} from 'react-router-dom'
 
 class Header extends React.Component {
 
@@ -6,6 +7,8 @@ class Header extends React.Component {
     render() {
         return (
             <header className="HolyGrail-header">
+                <Link to="/">_BTC_-</Link>
+                <Link to="/ltc">-_LTC_</Link>
                 <h1>{this.props.title}</h1>
                 <div className="img"></div>
                 <p>Przyszłość jest kwestią dzisiejszych wyborów.</p>
@@ -16,3 +19,5 @@ class Header extends React.Component {
 }
 
 module.exports = Header;
+
+// pamiętać o importowaniu !!! import {Router, Link} from 'react-router-dom'
