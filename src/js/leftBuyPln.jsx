@@ -17,6 +17,9 @@ class AsideLeft extends React.Component {
                         <li>Stan konta PLN</li>
                         <p>{this.props.value + " PLN"}</p>
                         <button onClick={this.handleClick}>Kup BTC</button>
+                        <ul>
+                            {this.props.history.map( p => <li>{p}</li>)}
+                        </ul>
                     </ul>
                 </aside>
             )
@@ -26,6 +29,9 @@ class AsideLeft extends React.Component {
                     <ul>
                         <li>Stan konta PLN</li>
                         <p>{this.props.value + " PLN"}</p>
+                        <ul>
+                            {this.props.history.map( p => <li>{p}</li>)}
+                        </ul>
                     </ul>
                 </aside>
             )

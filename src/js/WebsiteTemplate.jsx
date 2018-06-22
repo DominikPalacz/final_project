@@ -16,6 +16,7 @@ class WebsiteTemplate extends React.Component {
             btcValueRight: 0,
             take: 0,
             timeGame: 90,
+            story: []
         };
     }
 
@@ -51,16 +52,18 @@ class WebsiteTemplate extends React.Component {
             .then(data => {
                 let counter = 0;
                 let time = 89;
-                this.intervalId =  setInterval(() => {
+                this.intervalId = setInterval(() => {
                     this.setState({
-                        currentCourseCenter:  Math.floor(data[counter].open),
+                        currentCourseCenter: Math.floor(data[counter].open),
                         timeGame: time,
 
                     });
                     counter++;
                     time--;
 
-                    if(this.state.timeGame == 0){clearInterval(this.intervalId);}
+                    if (this.state.timeGame == 0) {
+                        clearInterval(this.intervalId);
+                    }
 
                 }, 1000);
 
@@ -75,17 +78,21 @@ class WebsiteTemplate extends React.Component {
     // ES7 ;)
     handleClickPayment = () => {
         let value = prompt("Podaj kwotę");
+
         this.setState({
                 plnValueLeft: value,
                 addDepositHistory: value
             }
         )
     };
-    //przekazanie this do komponentu dziecka bo tam ma inny kontekst
+    // przekazanie this do komponentu dziecka bo tam ma inny kontekst
+    // metoda push zwraca ilość elementów w tablicy, dlatego trzeba ją wywołac przed setState
     handleClickBuy = () => {
+        this.state.story.push(this.state.plnValueLeft);
         this.setState({
             btcValueRight: this.state.plnValueLeft / this.state.currentCourseCenter,
             plnValueLeft: 0,
+            story: this.state.story
         })
     };
 
@@ -114,7 +121,8 @@ class WebsiteTemplate extends React.Component {
 
                 <div className="HolyGrail-body">
 
-                    <AsideLeft value={this.state.plnValueLeft} actionClick={this.handleClickBuy} props={this.state}/>
+                    <AsideLeft value={this.state.plnValueLeft} actionClick={this.handleClickBuy} props={this.state}
+                               history={this.state.story}/>
 
                     <CenterMain courseApi={this.state.currentCourseCenter}
                                 timeProps={this.state.timeGame}
@@ -126,7 +134,7 @@ class WebsiteTemplate extends React.Component {
 
                 </div>
 
-                <Footer textFooter="&copy; 2018 by Dominik Palacz" />
+                <Footer textFooter="&copy; 2018 by Dominik Palacz"/>
 
             </section>
         )

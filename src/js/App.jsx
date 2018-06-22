@@ -14,7 +14,6 @@ class App extends React.Component {
 module.exports = App;
 
 
-//TODO historia transakcji
 //TODO Add Modal Dialogs in React
 // //
 // class ExampleApp extends React.Component {

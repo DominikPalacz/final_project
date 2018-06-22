@@ -338,6 +338,7 @@ $backgroundGold: hsla(51, 100%, 50%, 0.30);
 
   .HolyGrail-L {
     order: -1;
+
     p {
       background-color: $backgroundGold;
       @include baseShadow ();
