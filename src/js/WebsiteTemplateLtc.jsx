@@ -53,7 +53,7 @@ class WebsiteTemplateLtc extends React.Component {
 
     // ES7 ;)
     handleClickPayment = () => {
-        let value = prompt("Podaj kwotę");
+        let value = prompt("Provide the amount of money to be paid");
 
         this.setState({
                 plnValueLeft: value,
@@ -80,7 +80,7 @@ class WebsiteTemplateLtc extends React.Component {
     };
 
     handleClickPaycheck = () => {
-        let takeValue = prompt("Ile chcesz kasy ?");
+        let takeValue = prompt("How much money do you want to take?");
         this.setState({
             take: takeValue,
             plnValueLeft: Number(this.state.plnValueLeft) - Number(takeValue),

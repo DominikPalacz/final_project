@@ -20,18 +20,18 @@ class CenterMain extends React.Component {
             return (
                 <main className="HolyGrail-content">
                     <div>
-                        <h3>Czas to pieniądz! Pozostało {this.props.timeProps} sek</h3>
-                        <p>Aktualny kurs BTC</p>
+                        <h3>Time is money! You have {this.props.timeProps} seconds</h3>
+                        <p>Current BTC rate</p>
                         <h1>{this.props.courseApi}</h1>
                         <h2>{this.props.courseApiHistory}</h2>
                     </div>
                     <div>
-                        <button onClick={this.handleClickCenter}>Dokonaj wpłaty PLN</button>
+                        <button onClick={this.handleClickCenter}>payment to</button>
                     </div>
-                    <div>Historia wpłat:</div>
+                    <div>Deposit history:</div>
                     <p>{this.props.addHistory}</p>
-                    <button onClick={e => this.handleClickPay(e)}>Wypłać PLN</button>
-                    <div>Wypłacono:</div>
+                    <button onClick={e => this.handleClickPay(e)}>payment from</button>
+                    <div>Paid:</div>
                     <p>{this.props.stateTake}</p>
                     {/*<img*/}
                     {/*src="https://cryptocurrencynews.com/wp-content/uploads/sites/3/2018/03/Bitcoin-Price-Watch-BTC-USD-Breaks-Above-8000-Once-Again-678x381.jpg"*/}
@@ -41,11 +41,11 @@ class CenterMain extends React.Component {
         } else {
             return (
                 <main className="HolyGrail-content">
-                    <p>Pieniądz jest czasem... czasem jest ;) a czasem go niema!</p>
-                    <div>Wpłacono:</div>
+                    <p>Money is sometimes ... sometimes it is;) and sometimes it is not!</p>
+                    <div>Been paid:</div>
                     <p>{this.props.addHistory}</p>
-                    <button onClick={e => this.handleClickPay(e)}>Wypłać PLN</button>
-                    <div>Wypłacono:</div>
+                    <button onClick={e => this.handleClickPay(e)}>Money payment</button>
+                    <div>Paid:</div>
                     <p>{this.props.stateTake}</p>
                     <img
                         src="https://cryptocurrencynews.com/wp-content/uploads/sites/3/2018/03/Bitcoin-Price-Watch-BTC-USD-Breaks-Above-8000-Once-Again-678x381.jpg"

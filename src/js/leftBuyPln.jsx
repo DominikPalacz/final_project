@@ -14,9 +14,9 @@ class AsideLeft extends React.Component {
             return(
                 <aside className="HolyGrail-L">
                     <ul>
-                        <li>Stan konta PLN</li>
+                        <li>Account balance of money</li>
                         <p>{this.props.value + " PLN"}</p>
-                        <button onClick={this.handleClick}>Kup BTC</button>
+                        <button onClick={this.handleClick}>Buy</button>
                         <ul>
                             {this.props.history.map( p => <li>{p}</li>)}
                         </ul>
@@ -27,7 +27,7 @@ class AsideLeft extends React.Component {
             return(
                 <aside className="HolyGrail-L">
                     <ul>
-                        <li>Stan konta PLN</li>
+                        <li>Account balance of money</li>
                         <p>{this.props.value + " PLN"}</p>
                         <ul>
                             {this.props.history.map( p => <li>{p}</li>)}

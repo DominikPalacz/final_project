@@ -13,9 +13,9 @@ class AsideRight extends React.Component {
             return (
                 <aside className="HolyGrail-R">
                     <ul>
-                        <li>Stan konta BTC</li>
+                        <li>Cryptocurrency account status</li>
                         <p>{this.props.valueBtc + " BTC"}</p>
-                        <button onClick={e => this.handleCSell(e)}>Sprzedaj BTC</button>
+                        <button onClick={e => this.handleCSell(e)}>Sell</button>
                     </ul>
                 </aside>
             )
@@ -23,7 +23,7 @@ class AsideRight extends React.Component {
             return (
                 <aside className="HolyGrail-R">
                     <ul>
-                        <li>Stan konta BTC</li>
+                        <li>Cryptocurrency account status</li>
                         <p>{this.props.valueBtc + " BTC"}</p>
                     </ul>
                 </aside>
